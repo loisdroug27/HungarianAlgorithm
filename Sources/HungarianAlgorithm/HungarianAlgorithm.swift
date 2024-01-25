@@ -34,7 +34,7 @@ enum HungarianAlgorithm {
      - Returns: `(rowIndices, columnIndices)`: The optimal assignments, where `zip(rowIndices, columnIndices)`  creates a list
                                               of the found pairings. The assignments will come back sorted in ascending order by row index.
      */
-    static func findOptimalAssignment(_ costMatrix: Matrix) throws
+    public static func findOptimalAssignment(_ costMatrix: Matrix) throws
         -> (rowIndices: [Int], columnIndices: [Int]) {
         var numRows: Int = costMatrix.rows
         var numColumns: Int = costMatrix.cols
@@ -134,7 +134,7 @@ enum HungarianAlgorithm {
         - visitedRows: Vector to store which rows have been visited during the augmenting path traversal.
         - visitedColumns: Vector to store which columns have been visited during the augmenting path traversal.
      */
-    static func _findShortestAugmentingPath(
+    public static func _findShortestAugmentingPath(
         _ costMatrix: Matrix,
         _ u: inout [Double], _ v: inout [Double],
         _ path: inout [Int], _ columnAssignments: inout [Int],
